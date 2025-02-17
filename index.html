@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Password Hacker Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrixBg" class="matrix-bg"></canvas>
+
+    <div class="game-start" id="gameStart">
+        <h1 class="typing-effect">CYBERSECURITY BREACH SIMULATOR</h1>
+        <div class="difficulty-select">
+            <button class="difficulty-btn" data-difficulty="easy">EASY</button>
+            <button class="difficulty-btn" data-difficulty="normal">NORMAL</button>
+            <button class="difficulty-btn" data-difficulty="hard">HARD</button>
+        </div>
+        <div class="profile-select">
+            <input type="text" class="password-input" placeholder="Enter hacker alias..." id="hackerAlias">
+        </div>
+        <button class="button glow" onclick="startGame()">INITIALIZE SYSTEM</button>
+    </div>
+
+    <div class="container">
+        <div class="side-panel panel">
+            <h3>STATS</h3>
+            <div class="stats">
+                <div class="stat-item">Level: <span id="level">1</span></div>
+                <div class="stat-item">Score: <span id="score">0</span></div>
+                <div class="stat-item">Time: <span id="timer">30</span>s</div>
+                <div class="stat-item">XP: <span id="xp">0</span></div>
+            </div>
+            <h3>POWER-UPS</h3>
+            <div class="powerups">
+                <div class="powerup" id="timeBoost" onclick="usePowerup('timeBoost')">
+                    ⏰ Time +10s<br>(500 XP)
+                </div>
+                <div class="powerup" id="hintBoost" onclick="usePowerup('hintBoost')">
+                    💡 Get Hint<br>(300 XP)
+                </div>
+                <div class="powerup" id="skipLevel" onclick="usePowerup('skipLevel')">
+                    ⚡ Skip Level<br>(1000 XP)
+                </div>
+                <div class="powerup" id="scoreBoost" onclick="usePowerup('scoreBoost')">
+                    🎯 2x Score<br>(800 XP)
+                </div>
+            </div>
+            <h3>ACHIEVEMENTS</h3>
+            <div id="achievements"></div>
+        </div>
+
+        <div class="main-panel panel">
+            <h2>HACK THE SYSTEM</h2>
+            <div class="challenge-info">
+                <h3>Current Challenge:</h3>
+                <div id="challenge-description"></div>
+                <div id="requirements" class="requirements-list"></div>
+            </div>
+            <div class="terminal" id="terminal"></div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="strengthBar"></div>
+            </div>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Enter password..." autocomplete="off">
+            <button class="button glow" onclick="checkPassword()">EXECUTE HACK</button>
+        </div>
+
+        <div class="side-panel panel">
+            <h3>LEADERBOARD</h3>
+            <div id="leaderboard"></div>
+            <h3>SYSTEM LOG</h3>
+            <div id="systemLog" class="terminal"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="levelCompleteModal">
+        <h2>Level Complete!</h2>
+        <p>Score: <span id="levelScore"></span></p>
+        <p>Bonus: <span id="levelBonus"></span></p>
+        <button class="button" onclick="closeModal()">Continue</button>
+    </div>
+
+     <!-- Achievement popup -->
+     <div class="achievement-popup" id="achievementPopup">
+        <h3>Achievement Unlocked!</h3>
+        <p id="achievementText"></p>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

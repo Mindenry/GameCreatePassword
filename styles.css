@@ -1,0 +1,449 @@
+:root {
+    --neon-green: #33ff33;
+    --dark-green: #0a280a;
+    --terminal-black: #0a0a0a;
+    --error-red: #ff3333;
+    --warning-yellow: #ffff33;
+    --success-blue: #3333ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--terminal-black);
+    color: var(--neon-green);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.panel {
+    background-color: rgba(0, 20, 0, 0.9);
+    border: 1px solid var(--neon-green);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);
+}
+
+.game-start {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--terminal-black);
+    border: 2px solid var(--neon-green);
+    padding: 40px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(51, 255, 51, 0.7);
+}
+
+.password-input {
+    background-color: var(--terminal-black);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.button {
+    background-color: var(--dark-green);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-green);
+}
+
+.terminal {
+    background-color: rgba(0, 10, 0, 0.95);
+    padding: 15px;
+    border-radius: 3px;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.terminal-line {
+    margin-bottom: 5px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-item {
+    border: 1px solid var(--neon-green);
+    padding: 8px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--dark-green);
+    border: 1px solid var(--neon-green);
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--neon-green);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+#error-message {
+    color: #ff3333;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.panel {
+    background-color: rgba(0, 20, 0, 0.9);
+    border: 1px solid var(--neon-green);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-panel {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.terminal {
+    background-color: rgba(0, 10, 0, 0.95);
+    padding: 15px;
+    border-radius: 3px;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.terminal-line {
+    margin-bottom: 5px;
+    animation: typeWriter 0.1s steps(1);
+}
+
+.password-input {
+    background-color: var(--terminal-black);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: var(--dark-green);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-green);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--dark-green);
+    border: 1px solid var(--neon-green);
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--neon-green);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-item {
+    border: 1px solid var(--neon-green);
+    padding: 8px;
+    text-align: center;
+}
+
+.powerups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.powerup {
+    border: 1px solid var(--neon-green);
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.powerup.available {
+    opacity: 1;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+.glow {
+    animation: glow 1s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px var(--neon-green); }
+    50% { box-shadow: 0 0 20px var(--neon-green); }
+}
+
+@keyframes typeWriter {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.challenge-info {
+    margin-bottom: 15px;
+}
+
+.requirements-list {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.requirement {
+    margin: 5px 0;
+    opacity: 0.7;
+}
+
+.requirement.completed {
+    opacity: 1;
+    color: #33ff33;
+}
+
+.achievement {
+    padding: 5px;
+    margin: 5px 0;
+    border-left: 3px solid var(--neon-green);
+    font-size: 12px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--terminal-black);
+    border: 2px solid var(--neon-green);
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(51, 255, 51, 0.5);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+}
+
+/* New styles */
+.game-start {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--terminal-black);
+    border: 2px solid var(--neon-green);
+    padding: 40px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(51, 255, 51, 0.7);
+}
+
+.difficulty-select {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.difficulty-btn {
+    background-color: var(--dark-green);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.difficulty-btn.selected {
+    background-color: var(--neon-green);
+    color: var(--dark-green);
+}
+
+.combo-meter {
+    height: 5px;
+    background-color: var(--dark-green);
+    margin-top: 5px;
+    position: relative;
+}
+
+.combo-fill {
+    height: 100%;
+    background-color: var(--warning-yellow);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.powerup-tooltip {
+    position: absolute;
+    background-color: var(--terminal-black);
+    border: 1px solid var(--neon-green);
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: none;
+    z-index: 100;
+}
+
+.streak-indicator {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    color: var(--warning-yellow);
+    text-shadow: 0 0 10px var(--warning-yellow);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--neon-green);
+    border-radius: 15px;
+    font-size: 12px;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px var(--neon-green); }
+    50% { box-shadow: 0 0 20px var(--neon-green); }
+    100% { box-shadow: 0 0 5px var(--neon-green); }
+}
+
+.achievement-popup {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background-color: var(--terminal-black);
+    border: 2px solid var(--neon-green);
+    padding: 15px;
+    width: 250px;
+    transition: right 0.5s;
+    z-index: 1001;
+}
+
+.achievement-popup.show {
+    right: 20px;
+}
