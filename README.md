@@ -27,6 +27,9 @@ This is a fun and interactive password creation game where the difficulty increa
 - **CSS** - Styling and animations
 - **JavaScript** - Game logic and validation
 
+## 🌍 Play Online
+You can play the game online here: [Password Challenge Game](https://mindenry.github.io/GameCreatePassword/)
+
 ## 📂 Installation
 To run this game locally:
 ```sh
