@@ -42,9 +42,6 @@ git clone https://github.com/mindenry/GameCreatePassword.git
 ## 🤝 Contributing
 Feel free to fork this repository and submit pull requests to enhance the game.
 
-## 📜 License
-This project is licensed under the MIT License.
-
 ---
 🎉 Have fun creating strong passwords and improving security awareness!
 
