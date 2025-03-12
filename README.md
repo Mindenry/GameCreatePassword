@@ -30,15 +30,6 @@ This is a fun and interactive password creation game where the difficulty increa
 ## 🌍 Play Online
 You can play the game online here: [Password Challenge Game](https://mindenry.github.io/GameCreatePassword/)
 
-## 📂 Installation
-To run this game locally:
-```sh
-# Clone this repository
-git clone https://github.com/mindenry/GameCreatePassword.git
-
-# Open index.html in your browser
-```
-
 ## 🤝 Contributing
 Feel free to fork this repository and submit pull requests to enhance the game.
 
